@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGPA Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Zuper GPA & CGPA Calculator</h1>
+    <div class="controls-wrapper">
+      <div class="controls">
+        <button id="add-semester">Add Semester</button>
+        <button id="add-arrear">Add Pending Arrear Results</button>
+        <button id="remove-semester">Remove Last Row</button>
+        <div class="scale-group">
+          <span style="font-size: 1rem; font-weight: 500; color: #219150; vertical-align: middle;">Scale:</span>
+          <input id="scale-input" type="number" min="1" max="10" step="0.01" value="10" placeholder="1-10" />
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table id="cgpa-table">
+      <thead>
+        <tr>
+          <th>Semester</th>
+          <th>Credits Earned</th>
+          <th>Cumulative<wbr> Points</th>
+          <th>Current<wbr> Points</th>
+          <th style="min-width: 110px;">GPA</th>
+          <th>Manual<wbr> GPA<wbr> Entry</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Rows will be inserted by JS -->
+      </tbody>
+      <tr class="mobile-controls">
+        <td colspan="6">
+          <button id="add-semester-mobile">Add Semester</button>
+          <button id="add-arrear-mobile">Add Pending Arrear Results</button>
+          <button id="remove-semester-mobile">Remove Last Row</button>
+        </td>
+      </tr>
+      <tfoot>
+        <tr class="total-row">
+          <td><strong>Total</strong></td>
+          <td id="total-credits">0</td>
+          <td id="total-points">0.00</td>
+          <td style="background: #00ff00; color: #222; font-weight: bold;">CGPA</td>
+          <td id="cgpa" style="background: #00ff00; color: #222; font-weight: bold;">0.00</td>
+          <td style="background: #00ff00; padding: 0;">
+            <button id="clear-all" class="manual-gpa-btn" style="background: #e53935; color: #fff; border: none; border-radius: 6px; padding: 8px 18px; font-size: 1rem; cursor: pointer; width: 100%;">Clear All</button>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    </div>
+    <!-- Modal for manual GPA entry -->
+    <div id="manual-gpa-modal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <h2>Manual GPA Entry - <span id="modal-semester-name"></span></h2>
+        <div id="subjects-list"></div>
+        <button id="add-subject">Add Subject</button>
+        <div style="margin-top: 16px;">
+          <button id="save-gpa">Save GPA</button>
+        </div>
+        <div id="manual-gpa-error" style="color: red; margin-top: 10px;"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    Designed and Developed by Raghava<br/>
+    <a href="https://raghavavidyapriya.onrender.com" target="_blank">https://raghavavidyapriya.onrender.com</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 
